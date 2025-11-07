@@ -1,0 +1,3 @@
+[submodule "setup/cgenff_charmm2gmx"]
+	path = setup/cgenff_charmm2gmx
+	url = https://github.com/Lemkul-Lab/cgenff_charmm2gmx
