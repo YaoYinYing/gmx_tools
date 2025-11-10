@@ -1,4 +1,22 @@
 
+# Yinying notes here that this script is designed for md tutorial use cases, including 
+# setups, runs , analyses of molecular dynamics simulations using GROMACS and Bio3D.
+# This means user must need to know how and what to do and why they are doing so.
+# This is not a fully automated pipeline, but a collection of useful scripts for
+# common tasks in MD simulations. It assumes user has basic knowledge of MD simulations
+# and GROMACS/Bio3D usage, as lo.
+
+# This script performs various GROMACS analysis tasks based on the specified stage.
+# It requires certain environment variables to be set depending on the analysis stage.
+# Make sure to set the following environment variables as needed:
+# stage: The analysis stage to perform (e.g., em, nvt, npt, traj_center, gyrate, dssp, hbond_bb, hbond_sc, hbond_psol, rms, rmsf, sasa, traj_xtc2dcd, traj_gro2pdb, bio3d)
+
+# pdb_prefix: The prefix for the PDB/GRO files (required for some stages)
+# traj_prefix: The prefix for the trajectory files (required for some stages)
+# project_id: The project identifier (required for bio3d stage)
+# variant_id: The variant identifier (required for bio3d stage)
+# workdir: The working directory (required for bio3d stage)
+# dcd_prefix: The prefix for the DCD files (required for bio3d stage)   
 
 # example usages
 
@@ -23,7 +41,7 @@
 
 # run bio3d:
 # for i in 0 1 2;do 
-#     stage=bio3d project_id=t5ah2 variant_id=l72m_q122a workdir=$PWD pdb_prefix=md_0_100_${i} dcd_prefix=md_0_100_${i}_center \n 
+#     stage=bio3d project_id=t5ah2 variant_id=wt workdir=$PWD pdb_prefix=md_0_100_${i} dcd_prefix=md_0_100_${i}_center \n 
 #     bash ${GMX_TOOLS}/analysis/run_gmx_analysis.sh;
 # done
 
